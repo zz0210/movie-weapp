@@ -1,0 +1,19 @@
+<!--pages/movieList/movieList.wxml-->
+<view class="big-box">
+  <!--单个电影框，包括图片名称和评分-->
+  <view class="single-movie" wx:for="{{movies}}" bindtap="movie" data-movieId="{{item.movieId}}">
+    <image src="{{item.movieImg}}"></image>  <!--电影图片-->
+    <text class="movieName">{{item.movieName}}</text>  <!--电影名称-->
+    <text class="pingfen" wx:if="{{item.movieScore==0}}">暂无评分</text>
+    <view class="pingfenImg" wx:else> <!--星星和分数-->
+      <view class="stars-box">  <!--星星的盒子-->
+        <block wx:for="{{item.star}}" wx:for-item="starItem">
+          <image src="/images/yousestar.png" wx:if="{{starItem=='a'}}"></image>
+          <image src="/images/banstar.png" wx:if="{{starItem=='b'}}"></image>
+          <image src="/images/wusestar.png" wx:if="{{starItem=='c'}}"></image>
+        </block>
+      </view>
+      <text>{{item.movieScore}}</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,534 @@
+/* pages/movieDetails/movieDetails.wxss */
+/* 电影信息样式开始 */
+@import '../../template/stars.wxss';  /*构建星星样式*/
+@import '../../template/jianjie.wxss';  /*简介样式*/
+.big-box {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0 28rpx;
+  background: #F0F2F5;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: row;
+  padding: 30rpx 0;
+}
+
+.movie-info>image {
+  width: 200rpx;
+  height: 280rpx;
+  border-radius: 5px;
+}
+
+.info {
+  padding-left: 30rpx;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.name {
+  font-size: 40rpx;
+  color: #000;
+  font-weight: 600;
+}
+
+.other-name {
+  font-size: 30rpx;
+  color: #838383;
+  margin-top: 5rpx;
+}
+
+.movie-type {
+  font-size: 22rpx;
+  color: #838383;
+  margin:20rpx 0;
+}
+
+.xk-big-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.xk-big-box>view {
+  width: 210rpx;
+  height: 60rpx;
+  margin-top: 15rpx;
+  text-align: center;
+  border-radius: 5px;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.xk-big-box .xiangkan-icon,
+.xk-big-box .kanguo-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+
+.xk-big-box text {
+  color: #4C4C4C;
+}
+/* 电影信息样式结束 */
+/* 评分框样式开始 */
+.pingfen-box {
+  width: 100%;
+  height: 180rpx;
+  border-radius: 8px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pingfen-box .title {
+  width: 100%;
+  box-sizing: border-box;
+  padding:15rpx 25rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.pingfen-box .title text {
+  font-size: 25rpx;
+  color: #000;
+  font-weight: 600;
+}
+
+.pingfen-box .title image {
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.pingfen-imgs-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.pingfen {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.pingfen-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 15rpx;  /*跟右边倒三角星星的距离*/
+}
+
+.pingfen-left text {
+  font-size: 45rpx;
+  color: #000;
+  font-weight: 600;
+}
+
+.pingfen-left .stars-box {
+  width: 90rpx;
+  height: 15rpx;
+}
+
+.pingfen-left image {
+  width: 15rpx;
+  height: 15rpx;
+}
+
+.pingfen-right {
+  display: flex;
+  flex-direction: row;
+}
+
+.pingfen-right .left-stars-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60rpx;
+  height: 75rpx;
+  margin-right: 10rpx;
+}
+
+.pingfen-right .left-stars-box>view {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 60rpx;
+  height: 12rpx;
+}
+
+.pingfen-right .left-stars-box>view image {
+  width: 12rpx;
+  height: 12rpx;
+}
+
+.pingfen-right .right-progress-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 150rpx;
+  height: 75rpx;
+}
+
+.pingfen-right .right-progress-box>view {
+  width: 150rpx;
+  height: 12rpx;
+  border-radius: 3rpx;
+  background: #e6e6e6;
+}
+
+.in-progress {
+  height: 12rpx;
+  border-radius: 3rpx;
+  background: #FFAC2D;
+}
+
+.renshu {
+  display: block;
+  margin-top: 10rpx;
+  font-size: 20rpx;
+  color: #8a8a8a;
+}
+/* 评分框样式结束 */
+/* 简介样式开始 */
+/* .jianjie-box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60rpx;
+} */
+
+/* .jianjie {
+  font-size: 40rpx;
+  color: #000;
+  font-weight: 600;
+} */
+
+/* .jianjie-text {
+  margin-top: 20rpx;
+  font-size: 35rpx;
+  color: #000;
+  display: -webkit-box;
+  -webkit-box-orient:vertical;
+  text-overflow: ellipsis;
+   overflow:hidden;
+} */
+/*以上4行实现收缩*/
+
+/*展开/收起*/
+/* .ellipsis-btn {
+  display: block;
+  float: right;
+  font-size: 40rpx;
+  color: #666;
+  margin-top: 10rpx;
+} */
+
+/*收缩时展示4行*/
+/* .ellipsis {
+  -webkit-line-clamp:4; 
+} */
+
+/*展开时显示全部*/
+/* .unellipsis {
+  -webkit-line-clamp:0; 
+} */
+/* 简介样式结束 */
+/* 影人样式开始 */
+.yingren-box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60rpx;
+}
+
+.yingren {
+  font-size: 40rpx;
+  color: #000;
+  font-weight: 600;
+}
+
+.yingren-info-box {
+  display: flex;
+  flex-direction: row;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.yingren-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  margin-top: 25rpx;
+  margin-right: 28rpx;
+}
+
+.yingren-info image {
+  width: 150rpx;
+  height: 200rpx;
+  border-radius: 5px;
+}
+
+.yingren-name {
+  font-size: 30rpx;
+  color: #191919;
+  margin-top: 20rpx;
+}
+
+.yingren-job {
+  font-size: 25rpx;
+  color: #8A8B8B;
+  margin-top: 16rpx;
+}
+/* 影人样式结束 */
+/* 预告片/剧照样式开始 */
+.yugaopian-box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60rpx;
+}
+
+.yugaopian-box .title-box {
+  box-sizing: border-box;
+  padding:15rpx 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.yugaopian-box .title-box>text {
+  font-size: 40rpx;
+  color: #000;
+  font-weight: 600;
+}
+
+.yugaopian-box .title-box .right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.yugaopian-box .title-box .right text {
+  font-size: 30rpx;
+  color: #868686;
+  font-weight: 600;
+  margin-right: 10rpx;
+}
+
+.yugaopian-box .title-box .right image {
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.yugaopian-box .imgsYugaopian-box {  /*scroll-view*/
+  white-space: nowrap;
+}
+
+.yugaopian-box .imgsYugaopian-box .img {
+  display: inline-block;
+}
+
+.yugaopian-box .imgsYugaopian-box .yugaopian {
+  width: 400rpx;
+  height: 250rpx;
+  margin-right: 5rpx;
+}
+
+.yugaopian-box .imgsYugaopian-box .img image {
+  height: 250rpx;
+  margin-right: 5rpx;  /*宽度自适应，在image标签中加入mode="heightFix"*/
+}
+/* 预告片/剧照样式结束 */
+/* 短评样式开始 */
+.duanping-box {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: #fff;
+  box-sizing: border-box;
+  margin-top: 60rpx;
+  padding:25rpx 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.duanping-box .title-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.duanping-box .title-box .duanping {
+  font-size: 36rpx;
+  color: #000;
+  font-weight: 600;
+}
+
+.duanping-box .title-box .right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.duanping-box .title-box .right text {
+  font-size: 30rpx;
+  color: #868686;
+  font-weight: 600;
+  margin-right: 10rpx;
+}
+
+.duanping-box .title-box .right image {
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.user-duanping-info {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin-top: 25rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+}
+
+.user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.user-info>image {    /*短评中用户的头像*/
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 50%;
+    margin-right: 15rpx;
+}
+
+.userName-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.userName {
+  font-size: 30rpx;
+  color: #000;
+}
+
+.user-pingjia-box {
+  height: 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.duanping-time {
+  margin-left: 10rpx;
+  font-size: 25rpx;
+  color: #8A8B8B;
+}
+
+.user-text {
+  font-size: 30rpx;
+  color: #191919;
+  margin-top: 20rpx;
+}
+
+.dianzan {
+  width: 65rpx;
+  height: 40rpx;
+  margin-top: 16rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dianzan image {
+  width: 35rpx;
+  height: 35rpx;
+  margin-top: 10rpx;
+}
+
+.dianzan text {
+  font-size: 25rpx;
+  color: #8a8a8a;
+}
+
+.bottom-title {
+  display: flex;
+  margin-top: 20rpx;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom-title text {
+  font-size: 30rpx;
+  color: #000;
+  font-weight: 600;
+}
+
+.bottom-title image {
+  width: 20rpx;
+  height: 20rpx;
+}
+/* 短评样式结束 */
+/* 喜欢这部电影…样式开始 */
+.like-box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60rpx;
+}
+
+.like-box .like {
+  font-size: 40rpx;
+  color: #000;
+  font-weight: 600;
+}
+
+.like-movie-box {
+  display: flex;
+  flex-direction: row;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+::-webkit-scrollbar {  /*去掉滚动条*/
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.like-movie-box .movie-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 28rpx;
+}
+
+.like-movie-box .movie-info image {
+  width: 150rpx;
+  height: 200rpx;
+  border-radius: 5px;
+}
+
+.like-movie-box .movie-info .movie-name {
+  font-size: 30rpx;
+  color: #000;
+  font-weight: bold;
+  margin-top: 10rpx;
+}
+
+.like-movie-box .movie-info .pingfen {
+  font-size: 25rpx;
+  color: #8B8C8C;
+  margin-top: 10rpx;
+}
+/* 喜欢这部电影…样式结束 */

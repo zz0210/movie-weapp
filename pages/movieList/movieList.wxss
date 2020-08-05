@@ -1,0 +1,40 @@
+/* pages/movieList/movieList.wxss */
+@import '../../template/stars.wxss';
+.single-movie {
+  float: left;
+  margin: 50rpx 25rpx 0 25rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.single-movie>image {
+  width: 200rpx;
+  height: 300rpx;
+  border-radius: 8px;
+}
+
+.movieName {
+  margin-top: 10rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.pingfen {
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.pingfenImg {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pingfenImg text {
+  font-size: 30rpx;
+  color: #818181;
+}

@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userAvatar">  <!--用户头像-->
+    <open-data type="userAvatarUrl"></open-data> <!--获取用户头像-->
+  </view>
+  <view class="userName">
+    <text>你好，</text>
+    <open-data type="userNickName"></open-data>  <!--获取用户昵称-->
+  </view>
+  <view class="enter" bindtap="enter">进入abc影视</view>
+</view>

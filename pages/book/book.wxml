@@ -1,0 +1,29 @@
+<!--Pages/book/book.wxml-->
+<view class="big-box">
+  <view class="header-title-box">
+    <view class="userAvatar">  <!--用户头像-->
+      <open-data type="userAvatarUrl"></open-data> <!--获取用户头像-->
+    </view>
+    <view class="userName-box">
+      <view class="userName">
+        <open-data type="userNickName"></open-data>  <!--获取用户昵称-->
+        <text>的书架</text>
+      </view>
+      <open-data class="city" type="userCity"></open-data>  <!--获取用户城市-->
+    </view>
+  </view>
+  <view class="btn">
+    <view class="saoma" bindtap="saoma">  <!--扫码加书按钮-->
+      <image src="/images/saoma.png" mode="widthFix"></image>
+    </view>
+    <view class="delete" bindtap="delete">  <!--清空书架按钮-->
+      <image src="/images/qingkong.png" mode="widthFix"></image>
+    </view>
+  </view>
+  <view class="books-box">
+    <view class="singleBook-box" wx:for="{{books}}" bindtap="bookDetails" data-bookIsbn="{{item.bookIsbn}}">  <!--单本书的盒子-->
+      <image src="{{item.img}}"></image>
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+</view>

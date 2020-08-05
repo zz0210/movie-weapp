@@ -1,0 +1,113 @@
+/* Pages/book/book.wxss */
+.header-title-box {  /*头部“xxx的书架”大的盒子*/
+  width: 100%;
+  height: 120rpx;
+  box-sizing: border-box;
+  padding: 0 25rpx;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.userAvatar {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.userName-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.userName {
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+.city {
+  font-size: 28rpx;
+  color: #999;
+}
+
+.btn {
+  position: fixed;
+  bottom: 50rpx;
+  right: 10rpx;
+  width: 120rpx;
+  height: 200rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.saoma {   /*扫码按钮*/
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background: linear-gradient(to bottom right,#00CC66,#006633);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.saoma image {
+  width: 40rpx;
+}
+
+.saoma text {
+  font-size: 25rpx;
+  color: #999;
+}
+
+.delete {   /*清空书架按钮*/
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background: linear-gradient(to bottom right,orange,red);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete image {
+  width: 40rpx;
+}
+
+.delete text {
+  font-size: 25rpx;
+  color: #999;
+}
+
+.books-box {   /*大的装书本的盒子*/
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.singleBook-box {  /*单本书的盒子*/
+  width: 200rpx;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20rpx 25rpx 0 25rpx;
+}
+
+.singleBook-box>image {  /*书本封面*/
+  width: 200rpx;
+  height: 280rpx;
+  border-radius: 8rpx;
+}
+
+.singleBook-box>text {  /*书名*/
+  font-size: 35rpx;
+  color: #000;
+  margin-top: 15rpx;
+}

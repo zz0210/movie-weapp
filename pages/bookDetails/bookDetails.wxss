@@ -1,0 +1,162 @@
+/* pages/bookDetails/bookDetails.wxss */
+@import '../../template/jianjie.wxss';  /*内容简介样式引入*/
+.big-box {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0 28rpx 20rpx 28rpx;
+  background: #F0F2F5;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: row;
+  padding: 30rpx 0;
+}
+
+.movie-info>image {
+  width: 200rpx;
+  height: 280rpx;
+  border-radius: 5px;
+}
+
+.info {
+  padding-left: 30rpx;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.name {
+  font-size: 40rpx;
+  color: #000;
+  font-weight: 600;
+}
+
+.movie-type {
+  font-size: 22rpx;
+  color: #838383;
+  margin:20rpx 0;
+}
+
+.xk-big-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.xk-big-box>view {
+  width: 210rpx;
+  height: 60rpx;
+  margin-top: 15rpx;
+  text-align: center;
+  border-radius: 5px;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.xk-big-box .xiangkan-icon,
+.xk-big-box .kanguo-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+
+.xk-big-box text {
+  color: #4C4C4C;
+}
+/* 电影信息样式结束 */
+/* 评分框样式开始 */
+.pingfen-box {
+  width: 100%;
+  height: 180rpx;
+  border-radius: 8px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pingfen-box .title {
+  width: 100%;
+  box-sizing: border-box;
+  padding:15rpx 25rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.pingfen-box .title text {   /*‘豆瓣评分’字体样式*/
+  font-size: 25rpx;
+  color: #000;
+  font-weight: 600;
+}
+
+.pingfen-box .title image {
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.pingfen {   /*分数所在的盒子*/
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.pingfen text {  /*评分分数样式*/
+  font-size: 35rpx;
+  color: #000;
+  font-weight: 600;
+}
+/* 评分框样式结束 */
+
+/* 内容简介样式开始 */
+    /*开头以引入*/
+/* 内容简介样式结束 */
+
+/*作者简介样式开始*/
+/*展开/收起*/
+.ellipsis-btn-z {  /*类名与内容简介有区别*/
+  display: block;
+  float: right;
+  font-size: 30rpx;
+  color: #666;
+  margin-top: 10rpx;
+}
+
+/*收缩时展示4行*/
+.Zellipsis {
+  -webkit-line-clamp:4; 
+}
+
+/*展开时显示全部*/
+.Zunellipsis {
+  -webkit-line-clamp:0; 
+}
+/*作者简介样式开始*/
+
+/*目录展开收起样式开始*/
+.ellipsis-btn-m {  /*类名与内容简介有区别*/
+  display: block;
+  float: right;
+  font-size: 30rpx;
+  color: #666;
+  margin-top: 10rpx;
+}
+
+/*收缩时展示4行*/
+.Mellipsis {
+  -webkit-line-clamp:4; 
+}
+
+/*展开时显示全部*/
+.Munellipsis {
+  -webkit-line-clamp:0; 
+}
+/*目录展开收起样式结束*/

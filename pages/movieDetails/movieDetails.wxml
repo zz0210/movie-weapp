@@ -1,0 +1,164 @@
+<!--pages/movieDetails/movieDetails.wxml-->
+<import src="../../template/stars.wxml" />  <!--引入构建星星模板-->
+<view class="big-box">
+	<view class="movie-info">  <!--电影图片和信息-->
+		<image src="{{movie.images.small}}"></image>
+		<view class="info">
+			<text class="name">{{movie.title}}{{movie.movieYear}}</text>
+			<text class="other-name">{{movie.original_title}}{{movie.movieYear}}</text>
+			<text class="movie-type">{{movie.movieType}}{{movie.movieCountry}}{{movie.movieTime}}</text>
+			<view class="xk-big-box">  <!--想看和看过父盒子-->
+				<view class="xiangkan-box">  <!--想看-->
+					<image src="/images/xiangkan.png" class="xiangkan-icon"></image>
+					<text>想看</text>
+				</view>
+				<view class="kanguo-box"> <!--看过-->
+					<image src="/images/kanguo.png" class="kanguo-icon"></image>
+					<text>看过</text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="pingfen-box">
+		<view class="title">
+			<text>豆瓣评分 ™</text>
+			<image src="/images/doubanpingfen-right.png"></image>
+		</view>
+		<view class="pingfen-imgs-box">
+			<view class="pingfen">
+				<view class="pingfen-left">
+					<text wx:if="{{movie.rating.average==0}}">暂无评分</text>
+					<text wx:else>{{movie.rating.average}}</text>
+					<template is="stars" data="{{...movie}}"></template> <!--调用构建星星模板-->
+				</view>
+				<view class="pingfen-right">
+					<view class="left-stars-box"> <!--倒三角星星盒子-->
+						<view>
+							<block wx:for="{{xunhuanFive}}">
+								<image src="/images/wusestar1.png"></image>
+							</block>
+						</view>
+						<view>
+							<block wx:for="{{xunhuanFour}}">
+								<image src="/images/wusestar1.png"></image>
+							</block>
+						</view>
+						<view>
+							<block wx:for="{{xunhuanThree}}">
+								<image src="/images/wusestar1.png"></image>
+							</block>
+						</view>
+						<view>
+							<block wx:for="{{xunhuanTwo}}">
+								<image src="/images/wusestar1.png"></image>
+							</block>
+						</view>
+						<view>
+							<image src="/images/wusestar1.png"></image>
+						</view>
+					</view>
+					<view class="right-progress-box">  <!--进度条盒子-->
+						<view>  <!--灰色进度条框-->
+							<view class="in-progress" wx:if="{{movie.allStarCountSum>0}}" style="width:{{movie.fiveStarPercent}}%"></view>  <!--里面填充颜色的进度条-->
+						</view>
+						<view>
+							<view class="in-progress" wx:if="{{movie.allStarCountSum>0}}" style="width:{{movie.fourStarPercent}}%"></view>
+						</view>
+						<view>
+							<view class="in-progress" wx:if="{{movie.allStarCountSum>0}}" style="width:{{movie.threeStarPercent}}%"></view>
+						</view>
+						<view>
+							<view class="in-progress" wx:if="{{movie.allStarCountSum>0}}" style="width:{{movie.twoStarPercent}}%"></view>
+						</view>
+						<view>
+							<view class="in-progress" wx:if="{{movie.allStarCountSum>0}}" style="width:{{movie.oneStarPercent}}%"></view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<text class="renshu">{{movie.ratings_count}}人评分</text>
+		</view>
+	</view>
+	<view class="jianjie-box">
+		<text class="jianjie">简介</text>
+		<view wx:if="{{movie.summary.length <= 80}}">  <!--字数≤80不显示展开收起-->
+			<text class="jianjie-text">{{movie.summary}}</text>
+		</view>
+		<view wx:else>  <!--字数≥80时才显示展开收起-->
+			<text class="jianjie-text {{ellipsis?'ellipsis':'unellipsis'}}">{{movie.summary}}</text>
+			<text class="ellipsis-btn" bindtap="ellipsisBtn">{{ellipsis?'展开':'收起'}}</text>
+		</view>
+	</view>
+	<view class="yingren-box">
+		<text class="yingren">影人</text>
+		<view class="yingren-info-box">
+			<view class="yingren-info"> <!--导演-->
+				<image src="{{movie.directors[0].avatars.small}}"></image>
+				<text class="yingren-name">{{movie.directors[0].name}}</text>
+				<text class="yingren-job">导演</text>
+			</view>
+			<view class="yingren-info" wx:for="{{movie.casts}}" wx:for-item="yanyuan">
+				<image src="{{yanyuan.avatars.small}}"></image>
+				<text class="yingren-name">{{yanyuan.name}}</text>
+				<text class="yingren-job">演员</text>
+			</view>
+		</view>
+	</view>
+	<view class="yugaopian-box">
+		<view class="title-box">
+			<text>预告片/剧照</text>
+			<view class="right">
+				<text>全部 {{movie.photos_count}}</text>
+				<image src="/images/doubanpingfen-right.png"></image>
+			</view>
+		</view>
+		<scroll-view class="imgsYugaopian-box" scroll-x>  <!--预告片和剧照盒子-->
+			<video src="movie.trailer_urls[0]" class="yugaopian img" controls="true" show-mute-btn="true"></video>
+			<view class="img" wx:for="{{movie.photos}}" wx:for-item="juzao">  <!--剧照-->
+				<image src="{{juzao.image}}" mode="heightFix"></image>
+			</view>
+		</scroll-view>
+	</view>
+	<view class="duanping-box">
+		<view class="title-box">
+			<text class="duanping">短评</text>
+			<view class="right">
+				<text>全部 {{movie.comments_count}}</text>
+				<image src="/images/doubanpingfen-right.png"></image>
+			</view>
+		</view>
+		<view class="user-duanping-info" wx:for="{{movie.userDuanping}}" wx:for-item="duanping">  <!--用户短评信息-->
+			<view class="user-info">  <!--上面分左右，左头像右昵称等-->
+				<image src="{{duanping.author.avatar}}"></image>
+				<view class="userName-box">
+					<text class="userName">{{duanping.author.name}}</text>
+					<view class="user-pingjia-box">
+						<template is="stars" data="{{...duanping}}"></template>
+						<text class="duanping-time">{{duanping.time}}</text>
+					</view>
+				</view>
+			</view>
+			<view class="user-text">{{duanping.content}}</view>  <!--用户评价的文字-->
+			<view class="dianzan">  <!--点赞-->
+				<view>
+					<image src="/images/dianzan.png"></image>
+				</view>
+				<text>{{duanping.useful_count}}</text>
+			</view>
+		</view>
+		<view class="bottom-title">
+			<text>查看全部短评</text>
+			<image src="/images/doubanpingfen-right.png"></image>
+		</view>
+	</view>
+	<view class="like-box">
+		<text class="like">喜欢这部电影的人也喜欢</text>
+		<view class="like-movie-box">
+			<view class="movie-info" wx:for="{{xunhuanFive}}">  <!--循环-->
+				<image src="/images/movie.jpg"></image>
+				<text class="movie-name">叶问</text>
+				<text class="pingfen">评分：5.9分</text>
+			</view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,73 @@
+<!--pages/bookDetails/bookDetails.wxml-->
+<view class="big-box">
+	<view class="header-box">  <!--装电影信息和评分的盒子-->
+		<!--电影图片和信息-->
+		<view class="movie-info">
+			<image src="{{book.images.small}}"></image>
+			<view class="info">
+				<text class="name">{{book.title}}</text>
+				<text class="movie-type">{{book.bookAuthor}}{{book.chubanse}}{{book.chubanTime}}</text>
+				<view class="xk-big-box">
+					<!--想读和在读父盒子-->
+					<view class="xiangkan-box">
+						<!--想读-->
+						<image src="/images/xiangkan.png" class="xiangkan-icon"></image>
+						<text>想读</text>
+					</view>
+					<view class="kanguo-box" bindtap="zaidu" data-zaiduIsbn="{{book.isbn13}}" data-bookId="{{book.id}}">
+						<!--在读-->
+						<image src="/images/kanguo.png" class="kanguo-icon"></image>
+						<text>在读</text>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="pingfen-box">
+			<view class="title">
+				<text>豆瓣评分 ™</text>
+				<image src="/images/doubanpingfen-right.png"></image>
+			</view>
+			<view class="pingfen">
+				<!--评分布局和电影略有不同-->
+				<text wx:if="{{book.rating.average==0}}">暂无评分</text>
+				<text wx:else>{{book.rating.average}}</text>
+			</view>
+		</view>
+	</view>
+	<view class="jianjie-box">
+		<text class="jianjie">内容简介</text>
+		<view wx:if="{{book.summary.length <= 80}}">
+			<!--字数≤80不显示展开收起-->
+			<text class="jianjie-text">{{book.summary}}</text>
+		</view>
+		<view wx:else>
+			<!--字数≥80时才显示展开收起-->
+			<text class="jianjie-text {{ellipsis?'ellipsis':'unellipsis'}}">{{book.summary}}</text>
+			<text class="ellipsis-btn" bindtap="ellipsisBtn">{{ellipsis?'展开':'收起'}}</text>
+		</view>
+	</view>
+	<view class="jianjie-box">
+		<text class="jianjie">作者简介</text>
+		<view wx:if="{{book.author_intro.length <= 80}}">
+			<!--字数≤80不显示展开收起-->
+			<text class="jianjie-text">{{book.author_intro}}</text>
+		</view>
+		<view wx:else>
+			<!--字数≥80时才显示展开收起-->
+			<text class="jianjie-text {{Zellipsis?'Zellipsis':'Zunellipsis'}}">{{book.author_intro}}</text>
+			<text class="ellipsis-btn-z" bindtap="ellipsisBtnZ">{{Zellipsis?'展开':'收起'}}</text>
+		</view>
+	</view>
+	<view class="jianjie-box">
+		<text class="jianjie">目录</text>
+		<view wx:if="{{book.catalog.length <= 80}}">
+			<!--字数≤80不显示展开收起-->
+			<text class="jianjie-text">{{book.catalog}}</text>
+		</view>
+		<view wx:else>
+			<!--字数≥80时才显示展开收起-->
+			<text class="jianjie-text {{Mellipsis?'Mellipsis':'Munellipsis'}}">{{book.catalog}}</text>
+			<text class="ellipsis-btn-m" bindtap="ellipsisBtnM">{{Mellipsis?'展开':'收起'}}</text>
+		</view>
+	</view>
+</view>

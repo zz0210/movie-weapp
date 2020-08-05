@@ -1,0 +1,51 @@
+<!--pages/bookReadingNotes/bookReadingNotes.wxml-->
+<view class="big-box">
+  <view class="title">阅读详情</view>
+  <view class="showNote-box">  <!--展示阅读详情的盒子-->
+    <view class="read-title">   <!--标题盒子-->
+      <text space="emsp">标  题</text>    <!--emsp:中文字符空格大小-->
+      <input type="text" cursor="1" value="{{note.titleValue}}" placeholder="点击添加" placeholder-style="text-align:right;font-size:30rpx" bindblur="titleBlur"></input>
+    </view>
+    <view class="read-date">   <!--阅读日期盒子-->
+      <text>阅读日期</text>
+      <input type="text" value="{{note.readDateValue}}" placeholder="点击添加" placeholder-style="text-align:right;font-size:30rpx" bindblur="readDateBlur"></input>
+    </view>
+    <view class="dudaonali">   <!--读到哪里盒子-->
+      <text>读到哪里</text>
+      <input type="text" value="{{note.dudaoValue}}" placeholder="例如：第三章第2节" placeholder-style="text-align:right;font-size:30rpx" bindblur="dudaoBlur"></input>
+    </view>
+    <view class="read-pages">   <!--书籍页码盒子-->
+      <text>书籍页码</text>
+      <view>
+        <input type="text" value="{{note.pagesStarValue}}" placeholder="开始页码" placeholder-style="text-align:center;font-size:30rpx" bindblur="pagesStarBlur"></input>
+        <text>至</text>
+        <input type="text" value="{{note.pagesEndValue}}" placeholder="结束页码" placeholder-style="text-align:center;font-size:30rpx" bindblur="pagesEndBlur"></input>
+      </view>
+    </view>
+    <view class="jindu-box">   <!--阅读进度盒子-->
+      <text>阅读进度</text>
+      <image src="/images/jia.png" bindtap="jinduShow"></image>  <!--加号图标-->
+    </view>
+    <view class="progress-box" style="display:{{jinduShow?'none':'block'}}">  <!--进度条盒子-->
+      <view class="progress" style="width:{{jinduValue}}"></view>  <!--进度条-->
+      <!--进度条输入为0或初始化时不显示东西（此时placeholder会显示）-->
+      <input type="digit" value="{{(jinduValue=='0%')?'':jinduValue}}" placeholder="输入百分比" bindblur="jinduBlur"></input>   <!--带小数点的数字键盘-->
+    </view>
+    <view class="notes-box">   <!--读书笔记盒子-->
+      <text>读书笔记</text>
+      <image src="/images/jia.png" bindtap="noteShow"></image>  <!--加号图标-->
+    </view>
+    <textarea value="{{note.textareaValue}}" bindblur="textareaBlur" style="display:{{noteShow?'none':'block'}}"></textarea>
+    <view class="btn">
+      <view class="save" bindtap="save">保存</view>
+      <view class="delete" bindtap="delete">清空所有</view>
+    </view>
+  </view>
+  <view class="jiange-box"></view>   <!--详情与缩略列表之间的间隔-->
+  <block wx:for="{{notesArr}}">   <!--缩略的读书笔记的列表-->
+    <view class="suolue-note">    <!--单个缩略的读书笔记，只显示标题内容和阅读日期-->
+      <text>{{item.note.titleValue}}</text>
+      <text class="suolue-date">{{item.note.readDateValue}}</text>
+    </view>
+  </block>
+</view>

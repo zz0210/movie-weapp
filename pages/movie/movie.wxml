@@ -1,0 +1,22 @@
+<!--pages/movie/movie.wxml-->
+<import src="../../template/stars.wxml"/> <!--引入构建星星模板-->
+<view class="big-box">
+  <view class="typeBox" wx:for="{{movieType}}">
+    <view class="titleBox">  <!--即将上映和更多-->
+      <text>{{item.title}}</text>
+      <text bindtap="more" data-titleTypeId="{{index}}" class="more">更多</text>
+    </view>
+    <view class="movie-box">
+      <view class="movie" wx:for="{{item.movie}}" wx:for-item="movie" bindtap="movie" data-movieId="{{movie.movieId}}">
+        <image src="{{movie.movieImg}}"></image>  <!--电影图片-->
+        <text class="movieName">{{movie.movieName}}</text>  <!--电影名称-->
+        <text class="pingfen" wx:if="{{movie.movieScore==0}}">暂无评分</text>
+        <view class="pingfenImg" wx:else> <!--星星和分数-->
+          <template is="stars" data="{{...movie}}"></template> <!--调用模板-->
+          <text>{{movie.movieScore}}</text>
+        </view>
+      </view>
+      <view class="right-box">1</view>  <!--横向滚动的最后放一个空盒子充当右边距(无效)-->
+    </view>
+  </view>
+</view>

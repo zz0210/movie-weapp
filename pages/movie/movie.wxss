@@ -1,0 +1,105 @@
+/* pages/movie/movie.wxss */
+@import '../../template/stars.wxss';
+.typeBox {
+  width: 100%;
+  height: 450rpx;
+  margin-top: 30rpx;
+}
+
+.titleBox {
+  position: relative;
+  height: 60rpx;
+  padding-left: 28rpx;
+  padding-right: 40rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titleBox text {
+  font-size: 30rpx;
+  color: #000;
+  font-weight: 600;
+}
+
+.titleBox .more {
+  font-size: 30rpx;
+  color: #42BD56;
+}
+
+/*更多后面跟着的右箭头*/
+.titleBox::after {
+  content: "";
+  position: absolute;
+  right: 20rpx;
+  width: 16rpx;
+  height: 16rpx;
+  border-top: 1px solid #42BD56;
+  border-right: 1px solid #42BD56;
+  transform: rotate(45deg);
+}
+
+.movie-box {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow-y: hidden;
+  overflow-x: auto;
+  box-sizing: border-box;
+  padding-left: 28rpx;
+}
+
+/*去掉滚动条*/
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.movie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20rpx 28rpx 0 0;  /*right不起作用*/
+}
+
+.movie>image{
+  width: 180rpx;
+  height: 260rpx;
+  border-radius: 5px;
+}
+
+.movie .movieName {
+  font-size: 30rpx;
+  color: #000;
+  font-weight: 600;
+  margin-top: 10rpx;
+}
+
+.movie .pingfen {
+  font-size: 25rpx;
+  color: #333;
+  margin-top: 5rpx;
+}
+
+.pingfenImg {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5rpx;
+}
+
+.pingfenImg text {
+  font-size: 25rpx;
+  color: #818181;
+}
+
+.right-box {
+  width: 28rpx;
+  height: 280rpx;
+  visibility: hidden;
+}

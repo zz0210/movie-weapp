@@ -1,0 +1,9 @@
+<template name="stars"> <!--将构建星星的代码写成一个模板，其它页面都可以调用-->
+	<view class="stars-box">  <!--星星的盒子-->
+		<block wx:for="{{star}}" wx:for-item="starItem">
+			<image src="/images/yousestar.png" wx:if="{{starItem=='a'}}"></image>
+			<image src="/images/banstar.png" wx:elif="{{starItem=='b'}}"></image>
+			<image src="/images/wusestar.png" wx:else></image>
+		</block>
+	</view>
+</template>

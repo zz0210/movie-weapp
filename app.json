@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/movie/movie",
+    "pages/movieList/movieList",
+    "pages/movieDetails/movieDetails",
+    "pages/book/book",
+    "pages/bookDetails/bookDetails",
+    "pages/bookReadingNotes/bookReadingNotes"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#42BD56",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#00B26A",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/movie/movie",
+        "text": "电影",
+        "iconPath": "/images/index.png",
+        "selectedIconPath": "/images/index-selected.png"
+      },
+      {
+        "pagePath": "pages/book/book",
+        "text": "读书",
+        "iconPath": "/images/read.png",
+        "selectedIconPath": "/images/read-selected.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "van-button": "./vant/button/index",
+    "van-cell": "./vant/cell/index",
+    "van-cell-group": "./vant/cell-group/index",
+    "van-toast": "./vant/toast/index",
+    "van-swipe-cell": "./vant/swipe-cell/index",
+    "van-dialog": "./vant/dialog/index"
+  }
+}

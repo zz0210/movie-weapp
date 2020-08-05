@@ -1,0 +1,263 @@
+/* pages/bookReadingNotes/bookReadingNotes.wxss */
+.title {    /*“阅读详情”字样盒子*/
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 10rpx;
+  font-size: 32rpx;
+  color: #000;
+  text-align: center;
+}
+
+.showNote-box {  /*展示阅读详情的盒子*/
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx 28rpx;
+}
+
+.read-title {   /*标题盒子*/
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.read-title>text {    /*“标题”字样*/
+  font-size: 30rpx;
+  color: #000;
+}
+
+.read-title>input {    /*标题输入框*/
+  width: 400rpx;
+  height: 100%;
+  border: none;
+  outline: none;
+  text-align: right;   /*光标、文字居右*/
+}
+
+.read-date {   /*阅读日期盒子*/
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.read-date>text {    /*“阅读日期”字样*/
+  font-size: 30rpx;
+  color: #000;
+}
+
+.read-date>input {    /*阅读日期输入框*/
+  width: 400rpx;
+  height: 100%;
+  border: none;
+  outline: none;
+  text-align: right;   /*光标、文字居右*/
+}
+
+.dudaonali {   /*读到哪里盒子*/
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.dudaonali>text {    /*“读到哪里”字样*/
+  font-size: 30rpx;
+  color: #000;
+}
+
+.dudaonali>input {    /*读到那里输入框*/
+  width: 550rpx;
+  height: 100%;
+  border: none;
+  outline: none;
+  text-align: right;   /*光标、文字居右*/
+}
+
+.read-pages {    /*书籍页码盒子*/
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.read-pages>text {    /*“书籍页码”字样*/
+  font-size: 30rpx;
+  color: #000;
+}
+
+.read-pages>view {   /*两个页码输入框盒子*/
+  width: 380rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.read-pages>view>input {   /*两个页码input*/
+  width: 170rpx;
+  height: 60rpx;
+  border: none;
+  outline: none;
+  background: #F7F7F7;
+  text-align: center;   /*光标、文字居中*/
+}
+
+.read-pages>view>text {   /*页码输入框中间的“至”字*/
+  font-size: 30rpx;
+  color: #AAA7B3;
+}
+
+.jindu-box {  /*阅读进度盒子*/
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.jindu-box>text {    /*"阅读进度"字样*/
+  font-size: 30rpx;
+  color: #000;
+}
+
+.jindu-box>image {    /*阅读进度字样右边的加号图标*/
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.progress-box {    /*进度条大盒子*/
+  position: relative;
+  width: 100%;
+  height: 100rpx;
+  border-radius: 8rpx;
+  margin-top: 20rpx;
+  background: #ECECEC;
+}
+
+.progress-box .progress {    /*进度条本身*/
+  /* width: 50%; */
+  height: 100rpx;
+  border-radius: 8rpx;
+  background: #4DAAF7;
+}
+
+.progress-box input {  /*进度输入框*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100rpx;
+  border: none;
+  outline: none;
+  background: transparent;
+  border-radius: 8rpx;
+}
+
+.notes-box {    /*读书笔记盒子*/
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.notes-box>text {     /*读书笔记字样*/
+  font-size: 30rpx;
+  color: #000;
+}
+
+.notes-box>image {    /*读书笔记字样右边的加号图标*/
+  width: 35rpx;
+  height: 35rpx;
+}
+
+textarea {     /*读书笔记输入文本域*/
+  width: 100%;
+  height: 200rpx;
+  margin-top: 20rpx;
+  background: #ECECEC;
+  border-radius: 8rpx;
+  border: none;
+  outline: none;
+}
+
+.btn {    /*按钮所在盒子*/
+  width: 100%;
+  height: 150rpx;
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.save,.delete {    /*保存、删除按钮共同部分*/
+  width: 280rpx;
+  height: 60rpx;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 60rpx;
+}
+
+.save {    /*保存按钮独特部分*/
+  color: #fff;
+  background: linear-gradient(to right,#70AEF7,#5389BE);
+}
+
+.delete {    /*清空按钮独特部分*/
+  color: #B24662;
+  box-sizing: border-box;
+  border: 1px solid #B24662;
+}
+
+.jiange-box {     /*详情与缩略列表之间的间隔*/
+  width: 100%;
+  height: 20rpx;
+  background: #F5F5F5;
+}
+
+.suolue-note {   /*单个缩略的读书笔记，只显示标题内容和阅读日期*/
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 28rpx;
+  border-bottom: 3px solid #F5F5F5;
+}
+
+.suolue-note>text {   /*缩略笔记的字体样式*/
+  font-size: 30rpx;
+  color: #000;
+}
+
+.suolue-note .suolue-date {   /*单独修改缩略笔记中时间字体的样式*/
+  color: #959595;
+}
